@@ -56,10 +56,12 @@
         outline: none;
         border: none;
         border-radius: 4px;
+        cursor: pointer;
     }
     option{
         text-align: center;
         font-size: 1.3rem;
+        cursor: pointer;
     }
 
     button{
@@ -77,4 +79,19 @@
     }
     button:hover{
         background-color: greenyellow;
+    }
+
+    .output {
+        margin-top: 20px;
+        background-color: azure;
+        width: 300px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .output p{
+        font-size: 1.2rem;
+        color: black;
     }
