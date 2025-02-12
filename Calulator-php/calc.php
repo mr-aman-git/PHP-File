@@ -13,11 +13,11 @@
                 <h2>Calculator</h2>
                 <form method="POST">
                     <div class="form-box">
-                        <input type="number" name="text1" placeholder="Enter Number">
+                        <input type="number" name="text1" placeholder="Enter Number" required>
                     </div>
 
                     <div class="form-select">
-                        <select name="operation" id="">
+                        <select name="operation" id="" required>
                             <option value="add">+</option>
                             <option value="sub">-</option>
                             <option value="mult">*</option>
@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="form-box">
-                        <input type="number" name="text2" placeholder="Enter Number">
+                        <input type="number" name="text2" placeholder="Enter Number" require required>
                     </div>
 
                     <button name="submit">Submit</button>
@@ -40,7 +40,7 @@
                         if(isset($_POST ['submit'])){
                             $num1= $_POST ['text1'];
                             $num2= $_POST ['text2'];
-
+            
                             switch ($_POST ['operation']) {
                                 case 'add':
                                     $sum= $num1 + $num2;
