@@ -19,13 +19,13 @@
                     <div class="form-select">
                         <div>
                             <label for="radio">Calcius</label>
-                            <input type="radio" value="Calcius" name="cal">
+                            <input type="radio" value="cel" name="units" required>
                         </div>
                         
 
                         <div>
                             <label for="radio">Faranite</label>
-                            <input type="radio" value="Faranite" name="cal">
+                            <input type="radio" value="far" name="units">
                         </div>
                     </div>
 
@@ -38,38 +38,19 @@
                         <?php
                         if(isset($_POST ['submit'])){
                             $num1= $_POST ['text1'];
-                            $num2= $_POST ['text2'];
+                            $temp= $_POST ['units'];
+
+                            if($temp == "cel"){
+                                $celcious = ($num1 - 32) * 5 / 9;
+                                echo "Celcius: $celcious";
+
+                            } else{
+                                $faranite = $num1 * 9 / 5 + 32;
+                                echo "Fahrenheit: $faranite";
+
+                            };
             
-                            switch ($_POST ['operation']) {
-                                case 'add':
-                                    $sum= $num1 + $num2;
-                                    echo "$num1 + $num2= " .$sum;
-                                    break;
-
-                                    case 'sub':
-                                        $sub= $num1 - $num2;
-                                        echo "$num1 - $num2= " .$sub;
-                                        break;
-
-                                        case 'mult':
-                                            $mult= $num1 * $num2;
-                                            echo "$num1 * $num2= " .$mult;
-                                            break;
-
-                                            case 'divi':
-                                                $divi= $num1 / $num2;
-                                                echo "$num1 / $num2= " .$divi;
-                                                break;
-
-                                                case 'modulo':
-                                                    $modulo= $num1 % $num2;
-                                                    echo "$num1 % $num2= " .$modulo;
-                                                    break;
-                                
-                                default:
-                                    echo 'not exist';
-                                    break;
-                            }
+                            
                         }
 
                         ?>
